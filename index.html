@@ -6,35 +6,29 @@
         <title>Blog</title>
   <style> 
       :root {
-            cor-fundo: #ffffff;
-            cor-texto: #000000;
-            cor-header: #4682B4;
-            cor-main: #7B8FD1;
-            cor-borda: #0C0C0C;
-            cor-botao: #ffffff;
+          --cor-fundo: #ffffff;
+          --cor-texto: #000000;
+          --cor-header: #4682B4;
+          --cor-main: #7B8FD1;
+          --cor-borda: #0C0C0C;
+          --cor-botao: #ffffff;
         }
 
         body.escuro {
-
-        cor-fundo: #121212;
-        cor-texto: #ffffff;
-        cor-header: #1f2937;
-        cor-main: #374151;
-        cor-borda: #ffffff;
-        cor-botao: #222222;
-
+        --cor-fundo: #121212;
+        --cor-texto: #ffffff;
+        --cor-header: #1f2937;
+        --cor-main: #374151;
+        --cor-borda: #ffffff;
+        --cor-botao: #222222;
         }
 
         body {
-
         background-color: var(--cor-fundo);
         color: var(--cor-texto);
         margin: 0;
-        font-family: Arial, sans-serif;
-
-            transition:
-                background-color 0.3s,
-                color 0.3s;
+        font-family: Arial, sans-serif;         
+        background-color 0.3s, color 0.3s;
         }
 
   header {
@@ -42,9 +36,10 @@
       color: #000000;
       text-align: center;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 20px auto;
       padding:16px;
       border: 5px solid #0C0C0C;
+      border-radius: 8px;
   }
 
        #botaoTema {
@@ -58,6 +53,16 @@
             margin-top: 10px;
         }
 
+      article button {
+            padding: 8px 12px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: var(--cor-botao);
+            color: var(--cor-texto);
+        }
+      
         #botaoTema:hover {
         opacity: 0.8;
         }
@@ -68,12 +73,18 @@
       max-width: 800px;
       margin: 0 auto;
       padding:16px;
+      border-radius: 8px;
   }
+      
       article{
       display: flex;
-      flex-direction: column;
-      gap: 30px;
       align-items: center;
+      gap: 30px;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
   }
 article {
     display: flex;
@@ -81,10 +92,9 @@ article {
     gap: 25px;
 }
 
-
  article img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
