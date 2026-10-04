@@ -27,49 +27,25 @@
         background-color: var(--cor-fundo);
         color: var(--cor-texto);
         margin: 0;
-        font-family: Arial, sans-serif;         
-        background-color 0.3s, color 0.3s;
+        font-family: Arial, sans-serif;  
+            
+        transition: background-color 0.3s, color 0.3s;
         }
 
   header {
-      background-color: #4682B4;
-      color: #000000;
+      background-color: var(--cor-header);
+      color: var(--cor-texto);
       text-align: center;
       max-width: 800px;
       margin: 20px auto;
       padding:16px;
-      border: 5px solid #0C0C0C;
+      border: 5px solid var(--cor-borda);
       border-radius: 8px;
-  }
-
-       #botaoTema {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            background-color: var(--cor-botao);
-            color: var(--cor-texto);
-            margin-top: 10px;
-        }
-
-      article button {
-            padding: 8px 12px;
-            border: 1px solid var(--cor-borda);
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            background-color: var(--cor-botao);
-            color: var(--cor-texto);
-        }
-      
-        #botaoTema:hover {
-        opacity: 0.8;
-        }
+  } 
       
   main {
-      background-color: #7B8FD1;
-      color: #FFFFFF;
+      background-color: var(--cor-main);
+      color: var(--cor-texto);
       max-width: 800px;
       margin: 0 auto;
       padding:16px;
@@ -79,18 +55,15 @@
       article{
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 25px;
+          
       background-color: var(--cor-fundo);
       color: var(--cor-texto);
+          
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 8px;
   }
-article {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
 
  article img {
   width: 250px;
@@ -99,10 +72,56 @@ article {
   border-radius: 8px;
   flex-shrink: 0;
   }
+.conteudo {
+            flex: 1;
+        }
+
+        .botoes {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        article button {
+            padding: 8px 12px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: var(--cor-botao);
+            color: var(--cor-texto);
+        }
+
+        article button:hover {
+            opacity: 0.8;
+        }
+
+        #botaoTema {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            padding: 12px 16px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-size: 16px;
+
+            background-color: var(--cor-botao);
+            color: var(--cor-texto);
+
+            z-index: 1000;
+        }
+
+        #botaoTema:hover {
+            opacity: 0.8;
+        }
+      
 </style>
-              
+ </head>
+    
   <body>
-     </head> 
       
     <header>
       <h1> 10 curiosidades inacreditaveis</h1>
@@ -114,33 +133,54 @@ article {
     <article>
         <img src="Gemini_Generated_Image_5wa8uy5wa8uy5wa8.png" 
     alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
-        <div> 
+        <div class="conteudo"> 
     <h2>Meu primeiro post</h2>   
     <p>Por:Melissa dos Santos da Silva</p>
     <p>Boas-vindas! Aqui vou mostrar 10 curiosidades que parecem mentira de tão incomuns.</p>
-    <button>❤️<span>0</span></button> 
-    <button>👍<span>0</span></button> 
-    <button>👎<span>0</span></button> 
+    <div class="botoes">
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
         </div>
+            </div>
     </article>
 
      <article>
         <img src="Gemini_Generated_Image_5wa8uy5wa8uy5wa8.png" 
     alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
-        <div>       
+        <div class="conteudo">       
     <h2>Meu primeiro post</h2>   
     <p>Por:Melissa dos Santos da Silva</p>
     <p>Boas-vindas! Aqui vou mostrar 10 curiosidades que parecem mentira de tão incomuns.</p>
-    <button>❤️<span>0</span></button> 
-    <button>👍<span>0</span></button> 
-    <button>👎<span>0</span></button> 
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
         </div> 
+             </div> 
     </article>
         
     </main>   
-  </body>
+  <button id="botaoTema">
+        🌙 Tema escuro
+    </button>
+      
   <script>
-      const botoes = document.querySelectorAll("button");
+      const botaoTema = document.getElementById("botaoTema");
+
+        botaoTema.addEventListener("click", function () {
+
+            document.body.classList.toggle("escuro");
+
+            if (document.body.classList.contains("escuro")) {
+                botaoTema.textContent = "☀️ Tema claro";
+            } else {
+                botaoTema.textContent = "🌙 Tema escuro";
+            }
+
+        });
+      
+      const botoes = document.querySelectorAll(".botao-curtida");
 
       botoes.forEach( function(botao){
          let curtiu = false; 
@@ -158,7 +198,8 @@ article {
       } 
    })
           
-  </script>   
+    </script> 
+  </body>
 </html>
    
  
