@@ -5,6 +5,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blog</title>
   <style> 
+      :root {
+            cor-fundo: #ffffff;
+            cor-texto: #000000;
+            cor-header: #4682B4;
+            cor-main: #7B8FD1;
+            cor-borda: #0C0C0C;
+            cor-botao: #ffffff;
+        }
+
+        body.escuro {
+
+        cor-fundo: #121212;
+        cor-texto: #ffffff;
+        cor-header: #1f2937;
+        cor-main: #374151;
+        cor-borda: #ffffff;
+        cor-botao: #222222;
+
+        }
+
+        body {
+
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        margin: 0;
+        font-family: Arial, sans-serif;
+
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+        }
+
   header {
       background-color: #4682B4;
       color: #000000;
@@ -14,6 +46,22 @@
       padding:16px;
       border: 5px solid #0C0C0C;
   }
+
+       #botaoTema {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: var(--cor-botao);
+            color: var(--cor-texto);
+            margin-top: 10px;
+        }
+
+        #botaoTema:hover {
+        opacity: 0.8;
+        }
+      
   main {
       background-color: #7B8FD1;
       color: #FFFFFF;
@@ -42,8 +90,9 @@ article {
   flex-shrink: 0;
   }
 </style>
-        
+              
   <body>
+     </head> 
       
     <header>
       <h1> 10 curiosidades inacreditaveis</h1>
