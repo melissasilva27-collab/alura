@@ -96,6 +96,111 @@
         article button:hover {
             opacity: 0.8;
         }
+      Entrar
+Cadastre-se grátis
+Você disse:
+revise este codigo pra mim e me diga pq o ultimo post nao esta dando certo e o penutimo tambem
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+  <style> 
+      :root {
+          --cor-fundo: #ffffff;
+          --cor-texto: #000000;
+          --cor-header: #835BC2;
+          --cor-main: #7B8FD1;
+          --cor-borda: #0C0C0C;
+          --cor-botao: #ffffff;
+        }
+
+        body.escuro {
+        --cor-fundo: #121212;
+        --cor-texto: #ffffff;
+        --cor-header: #1f2937;
+        --cor-main: #374151;
+        --cor-borda: #ffffff;
+        --cor-botao: #222222;
+        }
+
+        body {
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        margin: 0;
+        font-family: Arial, sans-serif;  
+            
+        transition: background-color 0.3s, color 0.3s;
+        }
+
+  header {
+      background-color: var(--cor-header);
+      color: var(--cor-texto);
+      text-align: center;
+      max-width: 800px;
+      margin: 20px auto;
+      padding:16px;
+      border: 5px solid var(--cor-borda);
+      border-radius: 8px;
+  } 
+      
+  main {
+      background-color: var(--cor-main);
+      color: var(--cor-texto);
+      max-width: 800px;
+      margin: 0 auto;
+      padding:16px;
+      border-radius: 8px;
+  }
+      
+      article{
+      display: flex;
+      align-items: center;
+      gap: 25px;
+          
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+          
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+  }
+
+ article img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    background-color: #ffffff;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.conteudo {
+            flex: 1;
+        }
+
+        .botoes {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        article button {
+            padding: 8px 12px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #D8D7FC;
+            color: #000000;
+        }
+
+        article button:hover {
+            opacity: 0.8;
+        }
 
         #botaoTema {
             position: fixed;
@@ -212,6 +317,344 @@ Há também criovulcões, que liberam água, gelo e gases em vez de lava.
 Essas descobertas mostram que a atividade vulcânica também acontece no espaço.</p>
     <p>Fonte: https://spaceplace-nasa-gov.translate.goog/volcanoes/en/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc</p>
     <a href="https://spaceplace-nasa-gov.translate.goog/volcanoes/en/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc</a>
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button>
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div> 
+             </div> 
+    </article>
+
+         <article>
+        <img src="Oxford-universityxt_1766248592343-1024x576.jpg" 
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo">       
+    <h2>A Universidade de Oxford é mais antiga que o Império Asteca</h2>   
+    <p>A Universidade de Oxford, na Inglaterra, é mais antiga que o próprio Império Asteca. Embora a data exata de sua fundação não seja conhecida, há registros de ensino em Oxford desde o século XI, enquanto os astecas estabeleceram seu império somente no século XV. Isso significa que Oxford já existia há centenas de anos quando os astecas começaram a construir um dos maiores impérios da América. Essa comparação mostra como diferentes civilizações se desenvolveram em períodos muito distintos da história.</p>
+    <p>Fonte: https://aventurasnahistoria.com.br/noticias/reportagem/universidade-de-oxford-e-mais-antiga-que-o-imperio-asteca.phtml</p>
+    <a href="https://aventurasnahistoria.com.br/noticias/reportagem/universidade-de-oxford-e-mais-antiga-que-o-imperio-asteca.phtml">Clique aqui para visitar o site</a>
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div> 
+             </div>
+             
+    </article>
+        
+    </main>   
+  <button id="botaoTema">
+        🌙
+    </button>
+      
+  <script>
+      const botaoTema = document.getElementById("botaoTema");
+
+        botaoTema.addEventListener("click", function () {
+
+            document.body.classList.toggle("escuro");
+
+            if (document.body.classList.contains("escuro")) {
+                botaoTema.textContent = "☀️";
+            } else {
+                botaoTema.textContent = "🌙";
+            }
+
+        });
+      
+      const botoes = document.querySelectorAll(".botao-curtida");
+
+      botoes.forEach( function(botao){
+         let curtiu = false; 
+         botao.addEventListener("click", botaoClicado);
+         function botaoClicado(){
+           console.log("fui clicado");
+           let texto = botao.querySelector("span");
+           if (curtiu === false){ 
+           texto.textContent++;
+           curtiu = true;
+      } else{
+          texto.textContent--; 
+          curtiu = false;     
+         }         
+      } 
+   })
+          
+    </script> 
+  </body>
+</html>
+
+O ChatGPT disse:
+Revisei seu código e encontrei o problema principal! 😊 Seu HTML está bem encaminhado, e o JavaScript do tema escuro e das curtidas está praticamente correto. Porém, existe um erro de HTML no penúltimo post que pode afetar a exibição dele e dos elementos seguintes.
+
+Vou mostrar exatamente onde está o erro e como corrigir.
+
+1. Erro no penúltimo post: a tag <a> está incompleta
+No post sobre os vulcões em outros planetas, você escreveu:
+
+<a href="https://spaceplace-nasa-gov.translate.goog/volcanoes/en/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc</a>
+O problema é que você não fechou as aspas do atributo href antes de escrever </a> e também não colocou o texto do link.
+
+O navegador acaba interpretando esse trecho de maneira incorreta, porque o endereço não foi encerrado adequadamente.
+
+Como corrigir
+Substitua esse trecho por:
+
+
+<a href="https://spaceplace.nasa.gov/volcanoes/en/" target="_blank" rel="noopener noreferrer">
+    Clique aqui para visitar o site
+</a>
+Assim, o link fica corretamente aberto e fechado. Também usei o endereço oficial da NASA Space Place, em vez do endereço do tradutor automático.
+
+2. E o último post?
+No código que você enviou, o último post é o da Universidade de Oxford, e a estrutura HTML dele parece estar correta.
+
+O trecho final está assim:
+
+<div class="botoes">
+    <button class="botao-curtida">❤️<span>0</span></button>
+    <button class="botao-curtida">👍<span>0</span></button>
+    <button class="botao-curtida">👎<span>0</span></button>
+</div>
+</div>
+</article>
+Essas tags estão fechadas corretamente.
+
+Se o último post não aparece, não carrega a imagem ou não funciona como esperado, precisamos distinguir o problema:
+
+Se o texto do post não aparece: verifique se o navegador está interpretando corretamente o HTML anterior, especialmente o link quebrado do post dos vulcões.
+
+Se a imagem não aparece: confira se o arquivo Oxford-universityxt_1766248592343-1024x576.jpg está na mesma pasta do arquivo HTML e se o nome está exatamente igual, incluindo maiúsculas, minúsculas e extensão.
+
+Se as curtidas não funcionam: o JavaScript atual seleciona todos os botões com a classe .botao-curtida, inclusive os do último post. Portanto, não há um erro evidente nessa parte que explique apenas o último post falhar.
+
+3. Há outro detalhe importante no seu código
+Você declarou o título principal como:
+
+<h1>5 curiosidades inacreditaveis</h1>
+Mas, logo abaixo, diz que o blog terá 10 curiosidades. Além disso, no HTML enviado, existem apenas 6 artigos, contando o primeiro post de boas-vindas.
+
+Isso não causa um erro de execução, mas vale ajustar o título e a quantidade de artigos para que o conteúdo fique consistente.
+
+4. Como verificar se o erro foi corrigido
+Depois de corrigir o link do post dos vulcões:
+
+Salve o arquivo HTML.
+
+Atualize a página no navegador com Ctrl + F5.
+
+Confira se o post dos vulcões e o da Universidade de Oxford aparecem normalmente.
+
+Clique nas curtidas do último post e verifique se os números aumentam e diminuem.
+
+Se continuar falhando, abra as ferramentas do navegador com F12 e clique na aba Console. Mensagens em vermelho podem indicar se há algum erro de JavaScript.
+
+Preciso confirmar só uma coisa para te dar a solução exata: quando você diz que o penúltimo e o último post não estão dando certo, o que acontece?
+
+1. Qual é o problema que você vê?
+
+
+Os posts não aparecem na página.
+
+As imagens não aparecem.
+
+Os botões de curtida não funcionam.
+
+O link não abre ou o conteúdo fica desconfigurado.
+
+É outro problema.
+2. Onde acontece?
+
+
+Somente no post dos vulcões.
+
+Somente no post de Oxford.
+
+Nos dois últimos posts.
+
+Você disse:
+
+ele nao pode ficar azul assim
+
+O ChatGPT disse:
+Isso acontece porque os links (<a>) do seu blog estão usando o estilo padrão do navegador, que deixa o texto azul e sublinhado. No seu código, você ainda não definiu um estilo próprio para eles.
+
+Para resolver, adicione este CSS dentro da tag <style>, de preferência no final, antes de </style>:
+
+
+css
+
+/* Estilo dos links dos posts */
+article a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+/* Quando passar o mouse ou selecionar o link */
+article a:hover {
+    color: var(--cor-header);
+    text-decoration: underline;
+}
+
+/* Links já visitados */
+article a:visited {
+    color: var(--cor-texto);
+}
+Como vai ficar?
+Normal: o link ficará preto no tema claro e branco no tema escuro.
+
+Ao passar o mouse: ficará roxo e sublinhado.
+
+Depois de visitar: continuará com a cor do texto, sem ficar roxo ou azul.
+
+Isso também vai corrigir o azul do título e dos parágrafos que aparecem na sua imagem, caso eles estejam sendo exibidos como links por causa de algum erro no HTML.
+
+Importante: no código que você enviou anteriormente, o título e o texto do post de Oxford não estão dentro de uma tag <a>. Se eles continuarem azuis e sublinhados depois dessa alteração, verifique se o arquivo HTML publicado no GitHub está atualizado e se essas tags estão corretas. O CSS acima estiliza os links dentro dos artigos, não os títulos e parágrafos comuns.
+
+
+Você disse:
+como exatamenteeu fasso para arrumar
+
+O ChatGPT disse:
+Vou te mostrar exatamente onde você precisa mexer no seu código. 😊 É bem simples!
+
+Passo 1 — Encontre o lugar certo
+No seu arquivo index.html, procure a parte que começa assim:
+
+<style>
+Dentro dela, você já tem vários estilos CSS, como body, header, main e article.
+
+Vá até o final do CSS, onde aparece este trecho:
+
+
+css
+#botaoTema:hover {
+    opacity: 0.8;
+}
+Passo 2 — Cole este código logo abaixo
+
+css
+article a,
+article a:visited {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+article a:hover {
+    color: var(--cor-header);
+    text-decoration: underline;
+}
+
+        #botaoTema {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            padding: 12px 16px;
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-size: 16px;
+
+            background-color: var(--cor-botao);
+            color: var(--cor-texto);
+
+            z-index: 1000;
+        }
+
+        #botaoTema:hover {
+            opacity: 0.8;
+        }
+      
+</style>
+ </head>
+    
+  <body>
+      
+    <header>
+      <h1> 5 curiosidades inacreditaveis</h1>
+      <p> Aqui você vai ver 10 curiosidades científicas, históricas e sobre o mundo. </p>   
+    </header>
+      
+    <main> 
+
+    <article>
+        <img src="Gemini_Generated_Image_5wa8uy5wa8uy5wa8.png" 
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo"> 
+    <h2>Meu primeiro post</h2>   
+    <p>Por:Melissa dos Santos da Silva</p>
+    <p>Boas-vindas! Aqui vou mostrar 10 curiosidades que parecem mentira de tão incomuns.</p>
+    <div class="botoes">
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div>
+            </div>
+    </article>
+
+     <article>
+    <img src="sol-definicao-caracteristicas-estrutura-fisica-e-ciclos-de-atividade-solar.jpg"
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo">       
+    <h2>A luz do Sol leva 8 minutos para chegar à Terra</h2>   
+    <p>A luz do Sol leva aproximadamente 8 minutos e 20 segundos para chegar à Terra. Isso acontece porque o Sol está a cerca de 150 milhões de quilômetros de nós, e a luz viaja a quase 300 mil quilômetros por segundo. Por isso, quando olhamos para o Sol, estamos vendo como ele era há mais de oito minutos!</p>
+    <p>Fonte://revistaoeste.com/variedades.com</p>
+    <a href="https://revistaoeste.com/variedades/quanto-tempo-a-luz-do-sol-leva-para-chegar-a-terra/">Clique aqui para visitar o site</a>
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div> 
+             </div> 
+    </article>
+
+        <article>
+        <img src="abelha-kawaii-em-estilo-plano_1951-856.jpg" 
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo">       
+    <h2>As abelhas conseguem reconhecer rostos.</h2>   
+    <p>As abelhas conseguem aprender a reconhecer rostos humanos. Em experimentos, pesquisadores mostraram diferentes imagens de rostos e deram açúcar como recompensa quando elas escolhiam o rosto correto. Depois de alguns treinamentos, as abelhas conseguiam identificar o rosto que haviam aprendido, mostrando uma incrível capacidade de memória e aprendizagem.</p>
+    <p>Fonte://ecoa.org.br/abelhas-sao-capazes-de-imaginar-reconhecer-rostos-e-ter-emocoes-afirma-pesquisador/</p>
+    <a href="https://ecoa.org.br/abelhas-sao-capazes-de-imaginar-reconhecer-rostos-e-ter-emocoes-afirma-pesquisador/">Clique aqui para visitar o site</a>
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div> 
+             </div> 
+    </article>
+
+         <article>
+        <img src="canva-carvalho-majestoso-em-um-campo-tranquilo-de-verão-MAG90at9Imc.jpg" 
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo">       
+    <h2> As árvores podem “conversar” de certa forma</h2>   
+    <p>As árvores não falam como os seres humanos, mas conseguem transmitir informações de outras formas.
+Elas emitem sinais elétricos e químicos que podem indicar como estão e o que está acontecendo ao seu redor.
+Esses sinais podem mudar de acordo com fatores como temperatura, umidade e hidratação.
+Um projeto na Irlanda utiliza sensores para registrar essas informações.
+Os dados ajudam os pesquisadores a entender melhor o comportamento e as condições das árvores.
+Assim, é possível perceber que as árvores possuem formas próprias de comunicação.</p>
+    <p>Fontes:"https://www-nationalgeographic-com.translate.goog/science/article/plants-can-talk-yes-really-heres-how?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc">Clique aqui para visitar o site </p>   
+    <a href="https://www-nationalgeographic-com.translate.goog/science/article/plants-can-talk-yes-really-heres-how?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc">Clique aqui para visitar o site</a>
+    <div class="botoes">       
+    <button class="botao-curtida">❤️<span>0</span></button> 
+    <button class="botao-curtida">👍<span>0</span></button> 
+    <button class="botao-curtida">👎<span>0</span></button> 
+        </div> 
+             </div> 
+    </article>
+
+         <article>
+        <img src="1abb8a44470c9dbb7dbf9376e19c11fb5ed22bdc1c91cabb9e8d77d993cfcaee.jpg" 
+    alt="O mundo é cheio de segredos fascinantes! Confira 10 curiosidades incríveis sobre ciência e história que vão mudar a forma como você vê a realidade. Prepare-se para se surpreender!">
+        <div class="conteudo">       
+    <h2>  A Antártida é o maior deserto do mundo </h2>   
+    <p>a Antártida é o maior deserto do mundo, mesmo sendo coberta por gelo? Localizada no extremo sul do planeta, ela possui aproximadamente 14,2 milhões de km². Apesar das baixas temperaturas e da grande quantidade de gelo, o continente é considerado um deserto porque recebe pouquíssima precipitação ao longo do ano. Essa curiosidade mostra que nem todo deserto é quente e cheio de areia: também existem desertos gelados!</p>
+    <p>Fonte:https://brasilescola.uol.com.br/geografia/os-maiores-desertos-mundo.htm</p>
+    <a href="https://brasilescola.uol.com.br/geografia/os-maiores-desertos-mundo.htm">Clique aqui para visitar o site </a>
     <div class="botoes">       
     <button class="botao-curtida">❤️<span>0</span></button> 
     <button class="botao-curtida">👍<span>0</span></button>
